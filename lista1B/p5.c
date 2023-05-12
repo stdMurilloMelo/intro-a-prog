@@ -6,7 +6,7 @@ int main()
 
     scanf("%d", &n);
 
-    if (n = 0)
+    if (n == 0)
     {
         printf("0! = 1\n");
         return 0;

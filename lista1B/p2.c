@@ -5,18 +5,15 @@ int main()
     int n, i, c;
     scanf("%d", &n);
 
-    if (n<5 || n>2000)
+    if (n <= 5 || n >= 2000)
     {
         return 0;
     }
-    
-    for (i = 2; i <= n; i++)
+
+    for (i = 2; i <= n; i += 2)
     {
-        if (i % 2 == 0)
-        {
-            c = i * i;
-            printf("%d^2 = %d\n", i, c);
-        }
+        c = i * i;
+        printf("%d^2 = %d\n", i, c);
     }
 
     return 0;
