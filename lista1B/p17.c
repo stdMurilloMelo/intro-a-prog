@@ -1,38 +1,30 @@
 #include <stdio.h>
-#include <math.h>
 
-int fatorial(int n)
+double exponencial(double arg, int num_termos)
 {
-    int i, f = 1;
+    double resultado = 1.0;
+    double numerador = 1.0;
+    double denominador = 1.0;
 
-    if (n == 0)
-        return 1;
-
-    for (i = 1; i <= n; i++)
+    for (int i = 1; i <= num_termos; i++)
     {
-        f = f * i;
+        numerador = numerador * arg;
+        denominador = denominador * (i);
+        resultado += numerador / denominador;
     }
-    return f;
+
+    return resultado;
 }
 
 int main()
 {
-    int n, i;
-    double x, y = 1;
+    double arg;
+    int num_termos;
 
-    scanf("%lf", &x);
-    scanf("%d", &n);
-
-    double x0 = x;
-
-    for (i = 1; i <= n; i++)
-    {
-        y += x / fatorial(i);
-        printf("%d: %.6lf\n", i, y);
-        x *= x0;
-    }
-
-    printf("e^%.2lf = %.6lf\n", x0, y);
+    scanf("%lf", &arg);
+    scanf("%d", &num_termos);
+    
+    printf("e^%.2lf = %.6lf\n", arg, exponencial(arg, num_termos));
 
     return 0;
 }

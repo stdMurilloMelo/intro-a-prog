@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-double coseno(double ang_rad, int num_termos)
+double cosseno(double ang_rad, int num_termos)
 {
     double resultado = 1.0;
     double numerador = 1.0;
@@ -24,7 +24,7 @@ int main()
     scanf("%lf", &ang_rad);
     scanf("%d", &num_termos);
 
-    printf("cos(%.2f) = %.6f\n", ang_rad, coseno(ang_rad, num_termos));
+    printf("cos(%.2f) = %.6f\n", ang_rad, cosseno(ang_rad, num_termos));
 
     return 0;
 }
