@@ -1,50 +1,30 @@
 #include <stdio.h>
-#include <math.h>
 
-int fatorial(int n)
+double coseno(double ang_rad, int num_termos)
 {
-    int i, f = 1;
+    double resultado = 1.0;
+    double numerador = 1.0;
+    double denominador = 1.0;
 
-    if (n == 0 || n == 1)
-        return 1;
-
-    for (i = 1; i <= n; i++)
+    for (int i = 1; i <= num_termos; i++)
     {
-        f = f * i;
+        numerador = -numerador * ang_rad * ang_rad;
+        denominador = denominador * (2 * i - 1) * (2 * i);
+        resultado += numerador / denominador;
     }
-    return f;
+
+    return resultado;
 }
 
 int main()
 {
-    int n, i, neg = 1;
-    double x, y = 1, x1, x2;
+    double ang_rad;
+    int num_termos;
 
-    scanf("%lf", &x);
-    scanf("%d", &n);
+    scanf("%lf", &ang_rad);
+    scanf("%d", &num_termos);
 
-    x1 = x;
-    x2 = x1 * x1;
-    x = x2;
-
-    for (i = 1; i <= n; i++)
-    {
-        if (neg)
-        {
-            y += -x / fatorial(2 * i);
-            neg = 0;
-        }
-
-        else
-        {
-            y += x / fatorial(2 * i);
-            neg = 1;
-        }
-        printf("%d = %.6lf\n", i, y);
-        x = x*x2;
-    }
-
-    printf("cos(%.2lf) = %.10lf\n", x1, y);
+    printf("cos(%.2f) = %.6f\n", ang_rad, coseno(ang_rad, num_termos));
 
     return 0;
 }
