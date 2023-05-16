@@ -12,6 +12,7 @@ int main()
 
     else
     {
+        printf("%d ", x);
         do
         {
             x = x + 2;

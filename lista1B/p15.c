@@ -26,7 +26,7 @@ int main()
         {
             if (a >= b)
             {
-                a = 1;
+                a = b/2;
                 b += 1;
             }
             else if (a < b && (somaDivisores(a) == b) && (somaDivisores(b) == a))
