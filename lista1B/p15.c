@@ -1,47 +1,50 @@
 #include <stdio.h>
 
-int somaDivisores(int a)
+int somaDivisores(int n)
 {
-    int s = 0, i;
-    for (i = 1; i <= a / 2; i++)
+    int soma = 0;
+    int i;
+
+    for (i = 1; i < n; i++)
     {
-        if (a % i == 0)
+        if (n % i == 0)
         {
-            s += i;
+            soma += i;
         }
     }
-    return s;
+    return soma;
+}
+
+void encontrarNumerosAmigos(int n)
+{
+    int numeros_amigos[n][2];
+    int count = 0;
+    int num = 1;
+
+    while (count < n)
+    {
+        int soma = somaDivisores(num);
+        if (soma > num && somaDivisores(soma) == num)
+        {
+            numeros_amigos[count][0] = num;
+            numeros_amigos[count][1] = soma;
+            count++;
+        }
+        num++;
+    }
+
+    int i;
+    for (i = 0; i < n; i++)
+    {
+        printf("(%d,%d)\n", numeros_amigos[i][0], numeros_amigos[i][1]);
+    }
 }
 
 int main()
 {
-    int num_amg;
-    int a = 1, b = 284;
-
-    scanf("%d", &num_amg);
-
-    while (num_amg > 0)
-    {
-        while (1)
-        {
-            if (a >= b)
-            {
-                a = b/2;
-                b += 1;
-            }
-            else if (a < b && (somaDivisores(a) == b) && (somaDivisores(b) == a))
-            {
-                break;
-            }
-
-            a += 1;
-        }
-
-        printf("(%d,%d)\n", a, b);
-        num_amg += -1;
-        b += 1;
-        a = 1;
-    }
+    int n;
+    scanf("%d", &n);
+    encontrarNumerosAmigos(n);
 
     return 0;
 }

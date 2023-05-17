@@ -4,7 +4,7 @@
 int main()
 {
     int n, i, *seq;
-    int maior = 0, temp = 0;
+    int maior = 1, temp = 1;
 
     scanf("%d", &n);
 
@@ -13,23 +13,24 @@ int main()
     for (i = 0; i < n; i++)
         scanf("%d", &seq[i]);
 
-    for (i = 0; i < n; i++)
+    for (i = 0; i < n - 1; i++)
     {
         if (seq[i] < seq[i + 1])
         {
-            ++maior;
+            maior = maior + 1;
         }
         else
         {
-            if (temp < maior)
-            {
-                temp = maior;
-                maior = 0;
-            }
+            maior = 1;
         }
+        if (temp < maior)
+        {
+            temp = maior;
+        }
+                
     }
 
-    printf("O comprimento do segmento crescente maximo e: %d\n", temp + 1);
+    printf("O comprimento do segmento crescente maximo e: %d\n", temp);
 
     return 0;
 }

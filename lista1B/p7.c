@@ -4,31 +4,39 @@
 int main()
 {
     int n, qnt_par = 0, qnt_impar = 0;
-    float m_par = 0, m_impar = 0;
+    double m_par = 0, m_impar = 0;
 
-
-    do
-    {   
+    while (1)
+    {
         scanf("%d", &n);
-        if (n % 2 == 0 && n !=0)
+        if (n==0)
+        {
+            break;
+        }
+        
+        if (n % 2 == 0)
         {
             qnt_par++;
-            m_par += n;
-        }
-        else if (n==0)
-        {
+            m_par += (float)n;
         }
         else
         {
             qnt_impar++;
-            m_impar += n;
+            m_impar += (float)n;
         }
-    } while (n>0);
-    
-    m_par = (float)m_par / qnt_par;
-    m_impar = (float)m_impar / qnt_impar;
+    }
 
-    printf("MEDIA PAR: %f\nMEDIA IMPAR: %f\n", m_par, m_impar);
+    if (qnt_par)
+    {
+        m_par = m_par / qnt_par;
+    }
+    
+    if (qnt_impar)
+    {
+        m_impar = m_impar / qnt_impar;
+    }
+
+    printf("MEDIA PAR: %lf\nMEDIA IMPAR: %lf\n", m_par, m_impar);
 
     return 0;
 }

@@ -1,43 +1,39 @@
 #include <stdio.h>
 
-int main()
-{
-    int T, i, j, k;
-    int A, invA, B, invB, maior[T];
+int inverterNumero(int num) {
+    int invertido = 0;
+    while (num > 0) {
+        int digito = num % 10;
+        invertido = (invertido * 10) + digito;
+        num /= 10;
+    }
+    return invertido;
+}
 
+int compararNumeros(int a, int b) {
+    int invertidoA = inverterNumero(a);
+    int invertidoB = inverterNumero(b);
+    if (invertidoA > invertidoB) {
+        return invertidoA;
+    } else {
+        return invertidoB;
+    }
+}
+
+int main() {
+    int T;
     scanf("%d", &T);
-    
-    for (i = 0; i < T; i++)
-    {
-        scanf("%d %d", &A, &B);
-        invA = 0;
-        invB = 0;
-        
-        //inversao
-        for (j = 0; j < 3; j++)
-        {
-            invA = invA * 10 + A % 10;
-            A = (A - A % 10) / 10;
-            invB = invB * 10 + B % 10;
-            B = (B - B % 10) / 10;
-        }
 
-
-        if (invA > invB)
-        {
-            maior[i] = invA;
-        }
-
-        else if (invA < invB)
-        {
-            maior[i] = invB;
-        }
-        // printf("%d\n", maior[i]);
+    int numeros[T][2];
+    int i;
+    for (i = 0; i < T; i++) {
+        scanf("%d %d", &numeros[i][0], &numeros[i][1]);
     }
 
-    for (k = 0; k < T; k++)
-    {
-        printf("%d\n", maior[k]);
+    int j;
+    for (j = 0; j < T; j++) {
+        int maiorNumero = compararNumeros(numeros[j][0], numeros[j][1]);
+        printf("%d\n", maiorNumero);
     }
 
     return 0;

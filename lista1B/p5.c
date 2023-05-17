@@ -1,21 +1,17 @@
 #include <stdio.h>
 
-int main()
-{
-    int n = 4, i, f = 1;
+int main() {
+	int n;
+	unsigned long int fat;
+	int i;
+	fat = 1;
+	scanf("%d", &n);
 
-    scanf("%d", &n);
+	for(i=1;i<=n;i++) {
+		fat = fat * i;
+	}
 
-    if (n == 0)
-    {
-        printf("0! = 1\n");
-        return 0;
-    }
+	printf("%d! = %lu\n", n, fat);
 
-    for (i = 1; i <= n; i++)
-    {
-        f = f * i;
-    }
-
-    printf("%d! = %d\n", n, f);
+	return 0;
 }

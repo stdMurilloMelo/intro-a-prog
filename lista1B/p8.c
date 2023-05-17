@@ -6,7 +6,12 @@ int main()
     int n;
 
     scanf("%d", &n);
-
+    
+    if (n<2)
+    {
+        printf("Campeonato invalido!");
+    }
+    
     for (i = 1; i < n+1; i++)
     {
         for (j = i + 1; j < n+1; j++)

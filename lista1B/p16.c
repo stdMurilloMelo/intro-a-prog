@@ -2,11 +2,12 @@
 
 double cosseno(double ang_rad, int num_termos)
 {
+    int i;
     double resultado = 1.0;
     double numerador = 1.0;
     double denominador = 1.0;
 
-    for (int i = 1; i <= num_termos; i++)
+    for (i = 1; i <= num_termos; i++)
     {
         numerador = -numerador * ang_rad * ang_rad;
         denominador = denominador * (2 * i - 1) * (2 * i);
