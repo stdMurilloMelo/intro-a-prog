@@ -19,7 +19,7 @@ void encontrarNumerosAmigos(int n)
 {
     int numeros_amigos[n][2];
     int count = 0;
-    int num = 1;
+    int num = 220;
 
     while (count < n)
     {

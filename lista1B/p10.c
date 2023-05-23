@@ -20,6 +20,11 @@ int main()
             {
                 printf("-(%d,%d)", i, j);
             }
+            else
+            {
+                break;
+            }
+            
         }
         printf("\n");
     }

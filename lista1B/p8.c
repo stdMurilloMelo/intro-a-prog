@@ -10,6 +10,7 @@ int main()
     if (n<2)
     {
         printf("Campeonato invalido!");
+        return 0;
     }
     
     for (i = 1; i < n+1; i++)
