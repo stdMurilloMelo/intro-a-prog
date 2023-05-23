@@ -18,6 +18,7 @@ void print_bytes(const void *end_byte, int n)
             printf(" ");
         }
     }
+    printf("\n");
 }
 
 int main()
@@ -32,19 +33,14 @@ int main()
     float byte_float = (float)numero;
 
     print_bytes(&byte_char, sizeof(byte_char));
-    printf("\n");
 
     print_bytes(&byte_short, sizeof(byte_short));
-    printf("\n");
 
     print_bytes(&byte_int, sizeof(byte_int));
-    printf("\n");
 
     print_bytes(&byte_float, sizeof(byte_float));
-    printf("\n");
 
     print_bytes(&numero, sizeof(numero));
-    printf("\n");
 
     return 0;
 }
