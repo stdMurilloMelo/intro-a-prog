@@ -23,6 +23,7 @@ int main()
         {
             maior = 1;
         }
+        
         if (temp < maior)
         {
             temp = maior;

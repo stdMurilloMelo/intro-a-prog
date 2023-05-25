@@ -16,7 +16,9 @@ int main()
             soma += i;
         }
     }
+    
     printf(" = %d", soma);
+    
     if (soma == n)
     {
         printf(" (NUMERO PERFEITO)");
@@ -26,8 +28,5 @@ int main()
         printf(" (NUMERO NAO E PERFEITO)");
     }
     
-    
-
-
     return 0;
 }

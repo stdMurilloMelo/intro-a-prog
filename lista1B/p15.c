@@ -24,7 +24,7 @@ void encontrarNumerosAmigos(int n)
     while (count < n)
     {
         int soma = somaDivisores(num);
-        if (soma > num && somaDivisores(soma) == num)
+        if (somaDivisores(soma) == num && soma > num )
         {
             numeros_amigos[count][0] = num;
             numeros_amigos[count][1] = soma;

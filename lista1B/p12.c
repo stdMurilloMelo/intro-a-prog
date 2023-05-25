@@ -7,9 +7,9 @@ int main()
 
     scanf("%d", &n);
 
-    for (hip = 1; hip <= n; hip++)
+    for (hip = 5; hip <= n; hip++)
     {
-        for (c1 = 1; c1 < hip; c1++)
+        for (c1 = 3; c1 < hip; c1++)
         {
             c2 = c1;
             while (c1 * c1 + c2 * c2 < hip * hip)
