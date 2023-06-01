@@ -8,11 +8,11 @@ int main()
 
     for (i = 1; i < n; i++)
     {
-        for (j = 1; j < n; j++)
+        for (j = 1; j <= i; j++)
         {
-            if ((i * j) % n == 1 && i <= j)
+            if ((i * j) % n == 1)
             {
-                printf("(%d,%d)\n", i, j);
+                printf("(%d,%d)\n", j, i);
             }
         }
     }
