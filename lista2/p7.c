@@ -10,7 +10,7 @@ void print_bytes(const void *end_byte, int n)
     {
         for (j = 7; j >= 0; j--)
         {
-            unsigned char bit = (ptr[i] >> j) & 1;
+            unsigned char bit = (*(ptr+i) >> j) & 1;
             printf("%u", bit);
         }
         if (i != (n - 1))
