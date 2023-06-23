@@ -28,7 +28,7 @@ int main()
 {
     char str[129];
 
-    while (scanf("%s", str) != EOF)
+    while (scanf("%s", str) != '\n')
     {
         long int n = string2int(str);
         printf("%ld %ld\n", n, n * 2);
