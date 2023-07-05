@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#define MAX_N 100
-#define MAX_M 100
+#define MAX_N 1000
+#define MAX_M 1000
 
 int main()
 {
