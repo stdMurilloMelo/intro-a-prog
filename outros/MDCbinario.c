@@ -51,7 +51,7 @@ int main()
 {
     long long a, b;
 
-    printf("Calcular mdc(a, b).\n\n");
+    printf("\nCalcular mdc(a, b).\n\n");
     
     printf("Digite o valor de a: ");
     scanf("%lld", &a);
@@ -59,7 +59,7 @@ int main()
     printf("Digite o valor de b: ");
     scanf("%lld", &b);
     
-    printf("mdc(%lld, %lld) =  %lld\n", a, b, bin_mdc(a, b));
+    printf("\nmdc(%lld, %lld) =  %lld\n\n", a, b, bin_mdc(a, b));
 
     return 0;
 }
