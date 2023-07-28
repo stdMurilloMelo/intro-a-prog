@@ -1,12 +1,21 @@
-#define RETANGULAR 1
-#define POLAR 0
 
-typedef struct complex
+#define RETANGULAR 1
+#define POLAR 2
+
+struct complex
 {
-    double r, i;
-} Complex;
+	double r, i;
+};
+typedef struct complex Complex;
 
 Complex cp_new(double r, double i);
-Complex cp_sum(Complex a, Complex b);
-void cp_print(Complex a, int tipo);
 
+Complex cp_sum(Complex A, Complex B);
+
+void cp_print(Complex A, int tipo);
+
+Complex cp_mult(Complex A, Complex B);
+Complex cp_conj(Complex A);
+double cp_ang(Complex A);
+double cp_len(Complex A);
+Complex cp_div(Complex A, Complex B);

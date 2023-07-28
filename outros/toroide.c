@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#define clear() printf("\033[H\033[J")
 
 int k;
 int main()
@@ -9,7 +10,7 @@ int main()
     float A = 0, B = 0, i, j, z[1760];
     char b[1760];
     
-    system("cls");
+    clear();
 
     for (;;)
     {
@@ -41,13 +42,13 @@ int main()
                 }
             }
         }
-        system("cls");
+        clear();
 
         for (k = 0; 1761 > k; k++)
             putchar(k % 80 ? b[k] : 10);
         
-        A += 0.4;
-        B += 0.2;
+        A += 0.02;
+        B += 0.01;
     }
 
     return 0;

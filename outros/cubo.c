@@ -3,6 +3,8 @@
 #include <string.h>
 #include <unistd.h>
 
+#define clear() printf("\033[H\033[J")
+
 float A, B, C;
 
 float cubeWidth = 20;
@@ -61,7 +63,7 @@ void calculateForSurface(float cubeX, float cubeY, float cubeZ, char ch)
 int main()
 {
 
-  system("cls");
+  clear();
 
   while (1)
   {
@@ -85,7 +87,7 @@ int main()
       }
     }
 
-    system("cls");
+    clear();
 
     for (int k = 0; k < width * height; k++)
     {
