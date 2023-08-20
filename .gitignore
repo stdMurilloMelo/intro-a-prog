@@ -4,6 +4,7 @@
 *.cgi
 *.com
 *.exe
+*.out
 *.gadget
 *.jar
 *.pif
